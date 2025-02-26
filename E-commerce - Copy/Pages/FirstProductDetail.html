@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 50px;
+            gap: 20px;
+        }
+
+        .Product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .Details {
+            max-width: 500px;
+            color: white;
+        }
+
+        .Decision-Making {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .Decision-Making button {
+            border: 2px solid #7FFFD4;
+            border-radius: 4px;
+            background-color: #002244;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .Decision-Making button:hover {
+            color: #002244;
+            background-color: #7FFFD4;
+        }
+
+        body {
+            background-color: #002244;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Product">
+            <img src="../Images/c08926351.png">
+        </div>
+
+        <div class="Details">
+            <h3>HP Pavilion Aero Laptop 13, Windows 11 Home, 13.3", AMD Ryzen™ 7, 16GB RAM, 512GB SSD, 2K, Natural Silver</h3>
+            <h4>Price: $719.99</h4>
+            <ul>
+                <li><strong>Operating System:</strong> Windows 11 Home</li>
+                <li><strong>Processor:</strong> AMD Ryzen™ 7 5800U (up to 4.4 GHz max boost clock, 16 MB L3 cache, 8 cores, 16 threads)</li>
+                <li><strong>Memory:</strong> 16 GB DDR4-3200 MHz RAM (onboard)</li>
+                <li><strong>Storage:</strong> 512 GB PCIe® NVMe™ M.2 SSD</li>
+                <li><strong>Graphics:</strong> Integrated AMD Radeon™ Graphics</li>
+                <li><strong>Display:</strong> 13.3" diagonal, WUXGA (1920 x 1200), IPS, micro-edge, anti-glare, 400 nits, 100% sRGB</li>
+            </ul>
+
+            <div class="Decision-Making">
+                <a href = "../Database/FirstProduct.php"><button>Buy Now!</button></a>
+                <a href = "ecommerce.html"><button>Leave</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

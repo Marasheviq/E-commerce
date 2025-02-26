@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 50px;
+            gap: 20px;
+        }
+
+        .Product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .Details {
+            max-width: 500px;
+            color: white;
+        }
+
+        .Decision-Making {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .Decision-Making button {
+            border: 2px solid #7FFFD4;
+            border-radius: 4px;
+            background-color: #002244;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .Decision-Making button:hover {
+            color: #002244;
+            background-color: #7FFFD4;
+        }
+
+        body {
+            background-color: #002244;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Product">
+            <img src="../Images/Hp.png">
+        </div>
+
+        <div class="Details">
+            <h3>HP Pavilion Laptop 16</h3>
+            <h4>Price: $649.99</h4>
+            <ul>
+                <li><strong>Processor:</strong> Intel® Core™ Ultra 7 155U: Up to 4.8 GHz with Intel® Turbo Boost Technology, featuring 12 cores and 14 threads.</li>
+                <li><strong>Memory:</strong> 16 GB LPDDR5x RAM: Operating at 7467 MT/s, providing efficient multitasking capabilities.</li>
+                <li><strong>Storage:</strong> 1 TB PCIe® NVMe™ SSD: Ensures fast data access and ample storage space.</li>
+                <li><strong>Graphics:</strong> Integrated Intel® Graphics: Suitable for everyday tasks and light multimedia use.</li>
+                <li><strong>Display:</strong> 16-inch 2K (1920 x 1200) IPS Display: Micro-edge, anti-glare, 300 nits brightness, 62.5% sRGB color gamut.</li>
+                <li><strong>Operating System:</strong> Windows 11 Home: The latest operating system from Microsoft, offering enhanced security and productivity features.</li>
+                <li><strong>Connectivity:</strong> Wi-Fi 6E (2x2) and Bluetooth® 5.3: For fast and reliable wireless connections.</li>
+                <li><strong>Ports:</strong>
+                  <ul>
+                    <li>2 USB Type-C® 10Gbps: Supports USB Power Delivery, DisplayPort™ 1.4, HP Sleep and Charge.</li>
+                    <li>1 USB Type-A 10Gbps: For connecting various devices.</li>
+                    <li>1 USB Type-A 5Gbps: Additional connectivity option.</li>
+                    <li>1 HDMI-out 2.1: For external display connectivity.</li>
+                    <li>1 headphone/microphone combo jack.</li>
+                  </ul>
+                </li>
+              </ul>
+              
+              
+              
+
+            <div class="Decision-Making">
+                <a href = "../Database/SixthProduct.php"><button>Buy Now!</button></a>
+                <a href = "ecommerce.html"><button>Leave</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

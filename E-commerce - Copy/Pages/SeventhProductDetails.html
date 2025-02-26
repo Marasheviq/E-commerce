@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 50px;
+            gap: 20px;
+        }
+
+        .Product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .Details {
+            max-width: 500px;
+            color: white;
+        }
+
+        .Decision-Making {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .Decision-Making button {
+            border: 2px solid #7FFFD4;
+            border-radius: 4px;
+            background-color: #002244;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .Decision-Making button:hover {
+            color: #002244;
+            background-color: #7FFFD4;
+        }
+
+        body {
+            background-color: #002244;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .MBstyle {
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Product">
+            <img src="../Images/Macbook-removebg-preview.png" class = "MBstyle">
+        </div>
+
+        <div class="Details">
+            <h3>MacBook Air 13'' M1 mgn73ze/a space grey 512 gb</h3>
+            <h4>Price: $1,390.00</h4>
+            <ul>
+                <li><strong>Processor:</strong> Apple M1 Chip: 8-core CPU (4 performance cores and 4 efficiency cores), 8-core GPU, and a 16-core Neural Engine for enhanced performance and machine learning capabilities.</li>
+                <li><strong>Memory:</strong> 8 GB Unified Memory: Allows the processor and GPU to efficiently share data for faster multitasking and smoother performance.</li>
+                <li><strong>Storage:</strong> 512 GB SSD: Provides fast data access and ample storage space for files and applications.</li>
+                <li><strong>Graphics:</strong> Integrated Apple GPU: A 7-core or 8-core GPU for smooth graphics performance, especially for video editing and gaming.</li>
+                <li><strong>Display:</strong> 13.3-inch Retina Display: 2560 x 1600 resolution, True Tone technology, and wide color (P3) for a stunning, vibrant visual experience.</li>
+                <li><strong>Operating System:</strong> macOS Monterey: The latest version of Apple's operating system, featuring an intuitive user interface and powerful features.</li>
+                <li><strong>Battery Life:</strong> Up to 15 hours of web browsing or up to 18 hours of video playback on a single charge, thanks to the efficiency of the Apple M1 chip.</li>
+                <li><strong>Ports:</strong>
+                  <ul>
+                    <li>2x Thunderbolt 3 (USB-C) ports: For data transfer, charging, and connecting external devices.</li>
+                    <li>3.5 mm headphone jack: For audio connections.</li>
+                  </ul>
+                </li>
+                <li><strong>Camera:</strong> 720p FaceTime HD camera: For clear video calls and streaming.</li>
+                <li><strong>Dimensions:</strong> 0.63 inches (1.61 cm) height, 11.97 inches (30.41 cm) width, 8.36 inches (21.24 cm) depth; weight of 2.8 pounds (1.29 kg).</li>
+              </ul>
+              
+              
+
+            <div class="Decision-Making">
+                <a href = "../Database/SeventhProduct.php"><button>Buy Now!</button></a>
+                <a href = "ecommerce.html"><button>Leave</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
