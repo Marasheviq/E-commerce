@@ -1,0 +1,289 @@
+CREATE TABLE Customer (
+    CustomerId INT PRIMARY KEY,
+    CustomerName VARCHAR(100),
+    CustomerEmail VARCHAR(100)
+);
+
+-- Insert customer data
+INSERT INTO Customer (CustomerId, CustomerName, CustomerEmail) VALUES 
+(1, 'John', 'john@example.com'),
+(2, 'Jane', 'jane@example.com'),
+(3, 'Mike', 'mike@example.com'),
+(4, 'Sarah', 'sarah@example.com'),
+(5, 'Chris', 'chris@example.com'),
+(6, 'Jessica', 'jessica@example.com'),
+(7, 'Daniel', 'daniel@example.com'),
+(8, 'Laura', 'laura@example.com'),
+(9, 'Mark', 'mark@example.com'),
+(10, 'Emily', 'emily@example.com'),
+(11, 'Tom', 'tom@example.com'),
+(12, 'Linda', 'linda@example.com'),
+(13, 'Alex', 'alex@example.com'),
+(14, 'Karen', 'karen@example.com'),
+(15, 'David', 'david@example.com'),
+(16, 'Sophia', 'sophia@example.com'),
+(17, 'Matt', 'matt@example.com'),
+(18, 'Alice', 'alice@example.com'),
+(19, 'Steven', 'steven@example.com'),
+(20, 'Rachel', 'rachel@example.com');
+
+-- Create Product table
+CREATE TABLE Product (
+    ProductId INT AUTO_INCREMENT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    ProductPrice DECIMAL(10, 2)
+);
+
+-- Insert product data
+INSERT INTO Product (ProductName, ProductPrice) VALUES 
+('HP Pavilion Aero Laptop 13', 719.99),
+('Apple MacBook Pro M4 Pro', 1999.00),
+('Dell XPS 13 Laptop', 1099.99),
+('ThinkPad P1 Gen 7 (16″ Intel) Mobile Workstation', 1954.02),
+('Razer Blade 15 Gaming Laptop', 1039.99),
+('HP Pavilion Laptop 16', 649.99),
+('MacBook Air 13\'\' M1 (space grey, 512GB)', 1390.00),
+('Dell Vostro Laptop', 490.00),
+('HP Spectre Laptop', 2490.00),
+('Lenovo Legion 5', 1599.99),
+('Ryzer Titan', 2199.99),
+('HP Pavilion Gaming Laptop', 1099.99),
+('Dell Alienware M15', 2199.99),
+('MacBook Pro 13"', 1799.99),
+('Lenovo ThinkPad X1 Carbon', 1999.99),
+('Ryzer Apex Laptop', 1599.99),
+('HP Omen Laptop', 1799.99),
+('Dell Inspiron 15', 799.99),
+('MacBook Air 13"', 999.99),
+('Lenovo IdeaPad Flex', 799.99);
+
+-- Create Orders table
+CREATE TABLE Orders (
+    OrderId INT AUTO_INCREMENT PRIMARY KEY,
+    OrderDate DATE,
+    CustomerId INT,
+    ProductId INT,
+    ProductPrice DECIMAL(10, 2),
+    FOREIGN KEY (CustomerId) REFERENCES Customer(CustomerId),
+    FOREIGN KEY (ProductId) REFERENCES Product(ProductId)
+);
+
+-- Insert order data
+INSERT INTO Orders (OrderDate, CustomerId, ProductId, ProductPrice) VALUES 
+('2025-01-01', 1, 1, 1399.99),
+('2025-01-02', 2, 2, 1599.99),
+('2025-01-03', 3, 3, 1499.99),
+('2025-01-04', 4, 4, 2399.99),
+('2025-01-05', 5, 5, 1899.99),
+('2025-01-06', 6, 6, 1799.99),
+('2025-01-07', 7, 7, 1299.99),
+('2025-01-08', 8, 8, 1699.99),
+('2025-01-09', 9, 9, 1199.99),
+('2025-01-10', 10, 10, 1599.99),
+('2025-01-11', 11, 11, 2199.99),
+('2025-01-12', 12, 12, 1099.99),
+('2025-01-13', 13, 13, 2199.99),
+('2025-01-14', 14, 14, 1799.99),
+('2025-01-15', 15, 15, 1999.99),
+('2025-01-16', 16, 16, 1599.99),
+('2025-01-17', 17, 17, 1799.99),
+('2025-01-18', 18, 18, 799.99),
+('2025-01-19', 19, 19, 999.99),
+('2025-01-20', 20, 20, 799.99);
+
+-- Create Comments table
+CREATE TABLE Comments (
+    CommentId INT AUTO_INCREMENT PRIMARY KEY,
+    CommentText TEXT,
+    CustomerId INT,
+    ProductId INT,
+    FOREIGN KEY (CustomerId) REFERENCES Customer(CustomerId),
+    FOREIGN KEY (ProductId) REFERENCES Product(ProductId)
+);
+
+-- Insert comment data
+INSERT INTO Comments (CommentText, CustomerId, ProductId) VALUES 
+('Incredible performance for the price!', 1, 1),
+('The screen quality is fantastic!', 2, 2),
+('Perfect for gaming, no lag at all!', 3, 3),
+('Excellent build quality, very durable!', 4, 4),
+('Very portable and lightweight.', 5, 5),
+('Great for video editing and design work.', 6, 6),
+('Battery lasts all day!', 7, 7),
+('The keyboard is very comfortable to type on.', 8, 8),
+('Super fast processing speed!', 9, 9),
+('Love the sleek and modern design.', 10, 10),
+('Perfect for students and professionals alike.', 11, 11),
+('Great cooling system, no overheating.', 12, 12),
+('The trackpad is very responsive.', 13, 13),
+('My go-to laptop for all my work needs.', 14, 14),
+('The laptop stays cool even when gaming.', 15, 15),
+('Fast boot-up time.', 16, 16),
+('Highly efficient for multitasking.', 17, 17),
+('Amazing for both work and play.', 18, 18),
+('Good value for money, highly recommend!', 19, 19),
+('The audio quality is top-notch!', 20, 20);
+
+-- Create Inventory table
+CREATE TABLE Inventory (
+    ProductId INT,
+    Quantity INT,
+    Sold INT,
+    Total DECIMAL(10, 2) DEFAULT 0.00,
+    FOREIGN KEY (ProductId) REFERENCES Product(ProductId)
+);
+
+-- Insert inventory data
+INSERT INTO Inventory (ProductId, Quantity, Sold) VALUES 
+(1, 100, 50),
+(2, 150, 75),
+(3, 200, 100),
+(4, 120, 60),
+(5, 180, 90),
+(6, 160, 80),
+(7, 200, 100),
+(8, 250, 125),
+(9, 300, 150),
+(10, 180, 90),
+(11, 220, 110),
+(12, 250, 125),
+(13, 300, 150),
+(14, 220, 110),
+(15, 180, 90),
+(16, 200, 100),
+(17, 240, 120),
+(18, 180, 90),
+(19, 150, 75),
+(20, 100, 50);
+
+-- Query to fetch all orders with customer and product details, including price
+SELECT 
+    O.OrderDate, 
+    C.CustomerName, 
+    C.CustomerId, 
+    C.CustomerEmail, 
+    P.ProductName, 
+    O.ProductPrice
+FROM Orders O
+JOIN Customer C ON O.CustomerId = C.CustomerId
+JOIN Product P ON O.ProductId = P.ProductId;
+
+-- Query to fetch all comments with customer and product details
+SELECT 
+    CM.CommentText, 
+    C.CustomerName, 
+    C.CustomerId, 
+    C.CustomerEmail, 
+    P.ProductName
+FROM Comments CM	
+JOIN Customer C ON CM.CustomerId = C.CustomerId
+JOIN Product P ON CM.ProductId = P.ProductId;
+
+-- Query to fetch inventory details with product names
+SELECT 
+    I.Quantity, 
+    I.Sold, 
+    I.Total, 
+    P.ProductName
+FROM Inventory I
+JOIN Product P ON I.ProductId = P.ProductId;
+
+
+CREATE VIEW CommentsView AS
+SELECT 
+    C.CustomerId, 
+    C.CustomerName, 
+    CM.CommentId, 
+    CM.CommentText
+FROM Comments CM
+JOIN Customer C ON CM.CustomerId = C.CustomerId;
+
+-- Create OrdersView
+CREATE VIEW OrdersView AS
+SELECT 
+    C.CustomerId, 
+    C.CustomerName, 
+    C.CustomerEmail, 
+    O.OrderId, 
+    P.ProductName, 
+    O.ProductPrice, 
+    O.OrderDate
+FROM Orders O
+JOIN Customer C ON O.CustomerId = C.CustomerId
+JOIN Product P ON O.ProductId = P.ProductId;
+
+-- Create InventoryView
+CREATE VIEW InventoryView AS
+SELECT 
+    P.ProductName, 
+    I.Quantity, 
+    I.Sold, 
+    I.Total
+FROM Inventory I
+JOIN Product P ON I.ProductId = P.ProductId;
+
+-- Create CustomerList (customers who bought something)
+CREATE VIEW CustomerList AS
+SELECT 
+    DISTINCT C.CustomerId, 
+    C.CustomerName, 
+    C.CustomerEmail
+FROM Orders O
+JOIN Customer C ON O.CustomerId = C.CustomerId;
+
+-- Create CommentsList (customers who have made comments)
+CREATE VIEW CommentsList AS
+SELECT 
+    C.CustomerId, 
+    C.CustomerName, 
+    C.CustomerEmail, 
+    CM.CommentId, 
+    CM.CommentText
+FROM Comments CM
+JOIN Customer C ON CM.CustomerId = C.CustomerId;
+
+-- Stored procedure to delete an order
+DELIMITER //
+
+CREATE PROCEDURE DeleteOrder (
+    IN p_CustomerId INT,
+    IN p_ProductId INT
+)
+BEGIN
+    DELETE FROM Orders 
+    WHERE CustomerId = p_CustomerId AND ProductId = p_ProductId;
+END //
+
+DELIMITER ;
+
+-- Function to update the total amount earned from a product
+DELIMITER //
+
+CREATE FUNCTION UpdateProductTotal (p_ProductId INT, p_ProductPrice DECIMAL(10, 2))
+
+BEGIN
+    UPDATE Inventory
+    SET Total = Total + p_ProductPrice
+    WHERE ProductId = p_ProductId;
+END //
+
+DELIMITER ;
+
+-- Function to add to the total amount earned from a product
+DELIMITER //
+
+CREATE FUNCTION AddToProductTotal (p_ProductId INT, p_Amount DECIMAL(10, 2))
+BEGIN
+    UPDATE Inventory
+    SET Total = Total + p_Amount
+    WHERE ProductId = p_ProductId;
+END //
+
+DELIMITER ;
+
+	
+
+
+
+
+///// THIS IS THE LAST CODE \\\\\
